@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TechCod</title>
+    <link rel="icon" type="image/jpeg" href="favicon.jpeg">
+</head>
+<style>
+    nav{
+        padding: 15px 20px;
+        display: flex;
+        justify-content: center;
+        background-color: #00bfff;
+        position: fixed;
+        width: 100%;
+        top: 0;
+    }
+    nav a{
+        margin: 0 15px;
+        color: #333;
+        text-decoration: none;
+        font-weight: bold;
+        
+    }
+    nav a:hover{
+        text-decoration: underline;
+        color: yellow;
+        }
+        body{
+        padding: 0; 
+        background-color: #f2f2f2;
+        font-family: Arial,sans-serif;
+        overflow-x: hidden;
+        margin-top: 70px;
+        }
+        #about-us{
+            
+            background: linear-gradient(to right,#ce29d4,#6b0a44);
+        }
+        .us{
+            border: 2px inset #333;
+            padding: 5px;
+           background:linear-gradient(to right,#00bfff,#099744);
+            color:black;
+            text-align: center;
+            justify-content: center;
+            margin-bottom: 30px;
+            border-radius: 20px;
+
+        }
+        #images{
+            display: flex;
+            gap: 20px;
+            border-radius: 20px;
+        }
+        * {
+  box-sizing: border-box;
+}
+        img{
+            border: 5px inset #333;
+            border-radius: 20px;
+        }
+        .mission{
+            border: 5px inset #333;
+            border-radius: 20px;
+            background-color: aqua;
+            padding: 50px;
+            margin-bottom: 20px;
+        }
+        .innovation{
+            border: 5px ridge #333;
+            background-color: aqua;
+            border-radius: 20px;
+            margin-bottom: 30px;
+        }
+        .team,img {
+            display:flex ;
+            gap: 10px;
+        }
+</style>
+<body>
+    <nav>
+    <a href="index.html">HOME</a>
+     <a href="about.html">ABOUT US</a>
+     <a href="services.html">SERVICES</a>
+     <a href="contact.html">CONTACT US</a>
+     </nav>
+     <section id="about-us">
+        <section class="about">
+        <h1>
+            <span id="aboutUs"></span><span id="cursor">|</span>
+        </h1>
+        </section>
+        <section class="us">
+        <h2>Who We Are</h2>
+        <p>At TechCod, we are a team of passionate innovators dedicated to transforming ideas into cutting-edge digital solutions.<br>
+             We specialize in web development 🌐, mobile apps 📱, and cloud solutions ☁️ for businesses that want to lead, not follow.</p>
+            <div id="images"> <img src="us.jpeg" alt="who we are" width="500" height="700">
+             <img src="we.jpeg" alt="who we are" width="500" height="700">
+             <img src="we_us.jpeg" alt="who we are" width="500" height="700">
+        </div>
+            </section>
+        <section class="mission">
+            <h2>Our Mission</h2>
+        <p>Our mission is simple: empower businesses worldwide 🌎 with technology that drives growth, efficiency, and creativity. <br>
+            Every project we take on is a step toward shaping the future of digital experiences.</p>
+            <img src="mission.jpeg" alt="our mission" width="1000" height="500">
+        </section>
+        <section class="innovation">
+        <h2>Innovation at Heart</h2>
+        <p>Innovation is in our DNA 💡. We constantly explore new technologies, tools, and strategies to deliver solutions that are smart, scalable, and impactful.</p>
+        <img src="innovation.jpeg" alt="innovation"  width="1000" height="500">    >    
+    </section>
+                <section class="services">
+        <h2>What We Do</h2>
+        <ul>
+            <li>Web Development 🌐: Beautiful, responsive, and high-performance websites.</li>
+            <li>Mobile Apps 📱: Engaging apps for iOS and Android that delight users.</li>
+            <li>Cloud Solutions ☁️: Reliable, secure, and scalable cloud services.</li>
+            <li>Other Services 🔧: Consulting, IT strategy, and support tailored to your business.</li>
+        </ul>
+                </section>
+                        <section class="choice">
+        <h2>Why Choose Us?</h2>
+        <ul>
+            <li>We listen to your vision and bring it to life.</li>
+            <li>Our solutions are custom, innovative, and user-focused.</li>
+            <li>We are committed to quality, reliability, and client success.</li>
+            <li>Friendly, professional, and ready to turn challenges into opportunities.</li>
+        </ul>
+    </section>
+          
+        <h2>Our Team</h2>
+        <p>Our team is a mix of developers, designers, strategists, and tech enthusiasts who love what they do. Every member contributes creativity, expertise, and dedication to every project.</p>
+        <div class="team">
+        <img src="Agaba_profile.png" alt="Founder" width="150" height="200px">
+        <img src="profile.png" alt="Cofounder" width="150" height="200">
+        <img src="pm.jpeg" alt="Project manager" width="150" height="200">
+        <img src="developers.jpeg" alt="developers" width="150" height="200">
+        </div>
+        <section class="promise">
+        <h2>Our Promise</h2>
+        <p>At TechCod, we don’t just deliver services — we deliver experiences, results, and growth. Your vision is our roadmap, and together we can build the future of your business.</p>
+        </section>
+                <section class="join">
+        <h2>Join the TechCod Family</h2>
+        <p>Whether you are a startup, a growing business, or an enterprise, we welcome you to explore, innovate, and succeed with us. Let’s create something amazing together ✨.</p>
+                </section>
+    </section>
+    <script>
+        const about_us=document.getElementById('aboutUs');
+        const messag="About us🚀";
+        let index=0;
+        let typing=true;
+        function Typeit(){
+        if(typing){
+            if(index<messag.length){
+               about_us.textContent += messag.charAt(index);
+               index++;
+               setTimeout(Typeit,100);
+            }else {
+                typing=false;
+                setTimeout(Typeit,1000);
+            }
+                }
+                else{
+                    if(index>0){
+                        about_us.textContent=messag.substring(0, index-1);
+                        index--;
+                        setTimeout(Typeit,50);
+                    
+                }else{
+                    typing=true;
+                    setTimeout(Typeit,1000);
+                }
+            }
+        }
+  Typeit();
+    </script>
+    </body>
+</html>

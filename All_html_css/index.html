@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TechCod</title>
+    <link rel="icon" type="image/jpeg" href="favicon.jpeg">
+</head>
+<style>
+    nav{
+        background-color: #00bfff;
+        padding: 15px 20px;
+        display: flex;
+        justify-content: center;
+        position: fixed;
+        width: 100%;
+        top: 0;
+    }
+    nav a{
+        color:#333;
+        text-decoration:none;
+        margin:0 15px;
+        font-weight: bold;
+        font-size: 18px;
+    }
+    nav a:hover{
+        text-decoration: underline;
+        color: yellow;
+        }
+        body{
+        padding: 0;
+        margin: 0;
+        background-color: #222121;
+        font-family: Arial,sans-serif;
+        margin-top: 70px;
+        }
+        button{
+            color:white;
+            background-color: #007bff;
+            padding: 15px 25px;
+            font-size:18px;
+            border:none;
+            border-radius:4px;
+            transition:1s;
+            cursor:pointer;
+        }
+        @keyframes blink{
+         0%, 50%, 100% { opacity: 1; }
+         25%, 75% { opacity: 0; }            
+        }
+        button:hover{
+            background-color:#0056b3;
+        }
+        #home{
+            margin-left: 50px;
+            background:linear-gradient(to right,#5c6162,#333);
+            padding:80px 20px;
+            text-align:center;
+        }
+        #services{
+            background: linear-gradient(to right,#00bfff,#007bff);
+            color : white;
+            padding: 80px 20px;
+            text-align: center;
+
+       }
+       .wdev,.mapps,.cslns,.others{
+       border: 2px inset thistle;
+       padding:80px 20px;
+       margin-top: 0px;
+      
+       flex: 1;
+       border-radius: 10px;
+       background-position: center;
+       background-attachment: scroll;
+       }
+       .wdev{
+        background-image:url(wdev.jpg) ;
+       }
+       .mapps{
+        background-image:url(mapps.jpg) ;
+       }
+       .cslns{
+        background-image:url(cslns.jpg) ;
+       }
+        .others{
+            background-image:url(others.jpeg) ;
+            background-position: center;
+        }
+        
+      .services-list{
+        display:flex;
+        justify-content: center;
+        gap:20px;
+        align-items: stretch;
+        flex-wrap: wrap;
+       } 
+       #cursor{
+        display:inline-block;
+        animation: blink 0.7s infinite;
+       }
+
+</style>
+<body>
+    <nav>
+        <a href="index.html">HOME</a>
+        <a href="about.html">ABOUT US</a>
+        <a href="services.html">SERVICES</a>
+        <a href="contact.html">CONTACT US</a>
+    </nav>
+
+    <section id="home">
+    <h1>
+        <span id="welcome"></span><span id="cursor">|</span>
+
+    </h1>
+    <p>We turn your ideas into amazing digital products 💡</p>
+    <p>Websites 🌐, mobile apps 📱, cloud solutions ☁️ — we do it all.</p>
+    <p>Join businesses worldwide 🌎 that trust us to innovate ✨</p>
+    
+    <p>Want to get started? Scroll down ⬇️ or click the button below.</p>
+    <button onclick="document.getElementById('services').scrollIntoView();">Get Started</button>
+</section>
+<section id="services">
+  <h2>Our Services includes:</h2>
+ <ul class="services-list">
+    <li class="wdev">1.Web Development 🌐 </li>
+    
+   <li class="mapps"> 2.Mobile Apps 📱 </li>
+    <li class="cslns">3.Cloud Solutions ☁️</li>
+    <li class="others">4.Others.</li>
+</ul>
+  <p>Learn more about each service on our Services page.</p>
+</section>
+<script>
+    const welkie=document.getElementById('welcome');
+    const wmsg="Welcome to TechCod!🚀";
+    let index=0; 
+    let typing=true;  
+   function typeIt(){
+    if(typing){
+    if(index<wmsg.length){
+    welkie.textContent += wmsg.charAt(index);
+    index++;
+    setTimeout(typeIt,100);
+    }else{
+        typing=false;
+        setTimeout(typeIt,1000);
+    }
+    }
+    else{
+        if(index>0){
+            welkie.textContent = wmsg.substring(0, index - 1);
+            index--;
+       
+        setTimeout(typeIt,50);
+       
+    }else{
+        typing=true;
+        setTimeout(typeIt,1000);
+    }
+ }
+   }
+   typeIt();
+</script>
+</body>
+</html>
