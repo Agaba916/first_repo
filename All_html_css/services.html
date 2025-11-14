@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -43,7 +44,9 @@
         <a href="contact.html">CONTACT US</a>
     </nav> 
     <section id="services">
-        <h1>Our Services</h1>
+        <h1>
+            <span id="serve"></span><span id="cursor">|</span>
+        </h1>
         <p>At TechCod 🚀, we deliver innovative digital solutions for your business.</p>
         <p>Our team combines creativity, technology, and strategy.</p>
         <p>Explore our core services below:</p>
@@ -51,6 +54,7 @@
         <ul>
             <li>
                 <strong>1. Web Development 🌐</strong>
+                <div><img src="web_dev.png" alt="web development"></div>
                 <p>We create responsive websites.</p>
                 <p>They work perfectly on all devices.</p>
                 <p>Websites are fast, secure, and scalable.</p>
@@ -59,49 +63,77 @@
 
             <li>
                 <strong>2. Mobile Apps 📱</strong>
+                <div><img src="mobile_apps.png" alt="mobile apps"></div>
                 <p>We build apps for iOS and Android.</p>
                 <p>Apps are user-friendly and engaging.</p>
-                <p>We ensure security, speed, and reliability.</p>
-                <p>Perfect for businesses reaching customers on-the-go.</p>
-            </li>
-
-            <li>
-                <strong>3. Cloud Solutions ☁️</strong>
-                <p>Our cloud services provide secure storage.</p>
-                <p>We manage data efficiently.</p>
-                <p>Computing power is scalable for your growth.</p>
-                <p>Enjoy flexibility, reliability, and cost savings.</p>
-            </li>
-
             <li>
                 <strong>4. UI/UX Design 🎨</strong>
+                <div><img src="ui_us_designing.png" alt="ui/ux design"></div>
                 <p>We design interfaces that are visually appealing.</p>
+
                 <p>User experience is our top priority.</p>
                 <p>Designs improve engagement and satisfaction.</p>
                 <p>Each project focuses on usability and clarity.</p>
             </li>
 
             <li>
+
                 <strong>5. E-commerce Solutions 🛒</strong>
+                <div><img src="e_commerce.png" alt="e-commerce solutions"></div>
+
                 <p>We build online stores that are fast and secure.</p>
                 <p>Shopping experience is smooth and intuitive.</p>
+
                 <p>Custom features are added for your business needs.</p>
+
                 <p>Sell more and delight your customers.</p>
             </li>
 
+
             <li>
                 <strong>6. IT Consulting 🔧</strong>
+                <div><img src="it_consulting.png" alt="it Consulting"></div>
                 <p>We offer expert technology guidance.</p>
                 <p>Improve efficiency and reduce costs.</p>
+
                 <p>Our team helps implement the best solutions.</p>
                 <p>We support you at every step of the process.</p>
             </li>
         </ul>
 
+
         <p>All services are tailored to your business goals.</p>
+
         <p>We combine innovation, strategy, and technology to ensure success. 💡✨</p>
         <p>Contact TechCod today to start your next project!</p>
     </section>
-    
+    <script>
+        const SERVICES=document.getElementById("serve");
+        const serveText="Our Services";
+        let index=0;
+        let typing=true;
+        function weServe(){
+        if(typing){
+             if(index<serveText.length){
+                SERVICES.textContent+=serveText.charAt(index);
+                setTimeout(weServe,100);
+                index++;
+             }else{
+                typing=false;
+              
+              setTimeout(weServe,1000);
+             }
+             }else{
+                if(index>0){
+                 SERVICES.textContent=serveText.substring(0,index -1);
+                 index--;
+                 setTimeout(weServe,50);
+                }else{
+                    typing=true;
+                    setTimeout(weServe,1000);
+                }
+             }
+        }weServe();
+    </script>
 </body>
 </html>
