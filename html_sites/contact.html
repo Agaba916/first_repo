@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact</title>
+   <style>
+    #for{
+        display: flex;
+        justify-content:left;
+        border: 5px ridge rgb(13, 17, 241);
+     background:linear-gradient(to bottom,rgb(140, 234, 245),rgb(80, 71, 71));
+     padding:5px;
+     width: 400px;
+    padding-bottom: 200px;
+    }
+    .reach{
+        border: 3px solid rgb(214, 99, 99);
+       padding: 5px;
+        width:300px;
+        height: 100px;
+        padding-top: 10px;
+        background-color: aquamarine;
+    }
+   body{
+    background:linear-gradient(to bottom, aliceblue, blue);
+    border: 30px inset black;    
+}
+    #di{
+        border:2px solid rgb(144, 106, 106);
+        padding:5px;
+        padding-bottom: 50px;
+        background-color: aqua;
+    }
+    nav{
+        background-color: dodgerblue;
+        display: flex;
+        justify-content: center;
+        border: 5px ridge orange;
+        padding: 5px;
+    }
+    #navig:hover{
+        background-color: bisque;
+    }
+       a{
+        border: 3px ridge blueviolet;
+    }
+    #navig{
+        gap: 2px;
+    }
+   </style>
+</head>
+<body>
+    <nav id="navig">
+        <a href="work.html">Home</a>
+        <a href="me.html">About</a>
+        <a href="contact.html">Contact</a>
+    </nav>
+    <p>You can reach us with these contacts:</p>
+    <ol class="reach">
+        <li>Facebook:Agaba Jean Eudes</li>
+        <li>Ig:agaba.7</li>
+        <li>Email:agabahappy7@gmail.com</li>
+    </ol>
+    <h3>Send us a message:</h3>
+    <div id="for">
+    <form action="#" method="post">
+        <div id="di">   
+        <div>
+            <label for="names">Names:</label>
+            <input type="text" name="name" id="names"></div>
+            <div><label for="Email">Email:</label>
+            <input type="email" id="Email" name="email"></div>  
+            <div><label for="message">Message:</label></div>
+            <div><textarea name="message" id="message" rows="4" cols="40">your message here</textarea></div>
+            <div>
+                <button type="submit" value="Send">Send</button>
+            </div>
+              </div> 
+            <p>Thank you for your message!</p>
+    </form>
+</div>
+</body>
+</html>

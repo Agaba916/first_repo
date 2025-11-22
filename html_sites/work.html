@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Know me</title>
+    <link rel="favicon" type="img/png" href="profile.png">
+    <style>
+        #navig{
+            background-color: rgb(19, 168, 222);
+            color:rgb(135, 200, 56);
+            display: flex;
+            justify-content: center;
+            padding: 50px;
+        }
+        nav,a{
+            border:5px ridge rgb(105, 102, 97);
+            padding:5px;
+            gap:2px;
+
+        }
+        #navig:hover{background-color: rgb(17, 182, 108);
+
+        }
+        body{
+            background-color: rgb(19, 168, 222);
+            justify-content: center;
+        }
+        p{
+              background:linear-gradient(to bottom, rgb(194, 185, 185),rgb(51, 47, 47));
+              border: 5px inset black;
+              padding-bottom: 300px;
+              margin:50px;
+              color:rgb(23, 36, 32);
+             margin-bottom: 50px;
+        }
+        
+    </style>
+</head>
+<body>
+    <nav id="navig">
+        <a href="work.html">Home</a>
+        <a href="me.html">About</a>
+        <a href="contact.html">Contact</a>
+    </nav>
+    <h1>MY NAMES</h1>
+<p id="para"></p>
+<script>
+const text="A passionate and creative young developer, with a love for technology, coding, and designing elegant solutions.Confident, motivated, and always ready to learn and take on challenges........... 🙌'AGABA Happy Jean Eudes👋'";
+let i=0;
+function typeEffect(){
+    if (i<text.length){
+        document.getElementById("para").innerHTML +=text.charAt(i);
+        i++;
+        setTimeout(typeEffect,40);
+    }
+}
+typeEffect();
+</script>
+</body>
+</html>
